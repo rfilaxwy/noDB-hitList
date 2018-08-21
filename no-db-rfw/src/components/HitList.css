@@ -1,0 +1,26 @@
+.main{
+    background-color: rgba(34,34,34,.4);
+    color:white;
+    width:100vw;
+}
+
+.list{
+    display:flex;
+    justify-content: space-around;
+    /* align-items:center; */
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.hitList{
+    color:rgb(121, 121, 226);
+    width: 150px;
+}
+.deadList{
+    color: rgb(216, 16, 16);
+    width:150px;
+}
+.deadList>li{
+    text-decoration: line-through; 
+
+}

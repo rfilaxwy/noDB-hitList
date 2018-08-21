@@ -1,0 +1,12 @@
+li {
+    list-style: none;
+}
+.weatherDisp {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    font-size: 15px;
+}
+span{
+    color:rgb(76, 233, 220);
+}

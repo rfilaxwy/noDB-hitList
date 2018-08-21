@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+  /* background: url('https://images.unsplash.com/photo-1496304841270-2cb66cf766b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b7315530b500920741e176c5b43ef14b&auto=format&fit=crop&w=1650&q=80'); */
+  background: url('https://brightcove04pmdo-a.akamaihd.net/3653334524001/3653334524001_5381043941001_5379748916001-vs.jpg?pubId=3653334524001&videoId=5379748916001');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:cover;
+  height:100vh;
+}
+
+h2{
+  color:rgb(244, 245, 247);
+  font-size:30px;
+  letter-spacing: 2px;
+   font-weight:lighter;
+  font-family: fantasy;
+}
+h3{
+  color:rgb(219, 191, 189);
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.App-header {
+  background-color: rgba(34, 34, 34,.5);
+  height: 70px;
+  padding: 20px;
+  color: white;
+  display:flex;
+  justify-content: space-between;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.targets{
+  display:flex;
+  justify-content:space-between;
+}
+input{
+  border:none;
+  color: gray;
+  background-color: rgb(166, 188, 189);
+  border-radius:4px;
+  text-align: center;
+  margin:2px;
+}
+button{
+  margin:2px;
+}
+.greet{
+  display:flex;
+  height:25px;
+}
