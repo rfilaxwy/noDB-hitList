@@ -13,7 +13,7 @@ const londonID = `${weatherIDURL}2643743${weatherApiKey}`;
 module.exports = {
     read:(req,res) =>{
         axios.get(`${newYorkID}`).then(results=>{
-            console.log(results)
+            
             weather.push((Math.floor((Number(results.data.main.temp)*(9/5))-459.67)));
             });
         axios.get(`${londonID}`).then(results=>{

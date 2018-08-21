@@ -5,7 +5,7 @@ const
     cors=require('cors'),
     app = express(),
     hl =  require('./hitlist-controller.js'), 
-    wc = require('./weather-controller'),
+    wc = require('./weather-controller.js'),
     dot = require('dotenv').config();
 
 app.use(bodyParser.json() );
