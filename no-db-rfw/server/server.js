@@ -5,8 +5,8 @@ const
     cors=require('cors'),
     app = express(),
     hl =  require('./hitlist-controller.js'), 
-    wc = require('./weather-controller.js'),
-    dot = require('dotenv').config();
+    wc = require('./weather-controller.js');
+    require('dotenv').config();
 
 app.use(bodyParser.json() );
 app.use(cors())
@@ -21,13 +21,13 @@ app.get('/api/weather:city',wc.read)
 //Swpi CRUD
 //'https://swapi.co/api/people'
 app.get('/api/theList',hl.read);
-app.post('./api/theList',hl.create);
-app.put('./api/theList',hl.update);
+app.post('/api/theList',hl.create);
 
 
 
 
-const port = 8080;
+
+const port = process.env.PORT||8080;
 app.listen(port, ()=>{
     console.log(`Server listening on port ${port}`);
 });

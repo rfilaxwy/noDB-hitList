@@ -13,18 +13,19 @@ export default class HitList extends Component{
             disList:[],
             target:'',
             newTarget:'',
+            editTarget:''
            
         }
         this.handleAddTarget =this.handleAddTarget.bind(this);
         this.terminateTarget =this.terminateTarget.bind(this);
         this.handleNewTarget= this.handleNewTarget.bind(this);
+        this.newTargetAdd = this.newTargetAdd.bind(this);
     }
 
     componentDidMount(){
         let list=[];
         axios.get('/api/theList').then(results=>{  
            list =results.data;
-           console.log(list)
            this.setState({hitList:list}) 
           })
           //was setting state out here ... no good the promise went poof
@@ -49,12 +50,22 @@ export default class HitList extends Component{
     handleNewTarget(val){
         this.setState({newTarget:val})
     }
-    newTargetAdd(){
-        let {hitList}=this.state;
-        hitList.push(this.state.newTarget)
-        this.setState({hitList:hitList, newTarget:''})
+    handleEdit(val){
+        this.setState({editTarget:val})
     }
-
+    newTargetAdd(){
+        const body ={
+            newTarget:this.state.newTarget
+        }
+        axios.post('/api/theList',body)
+        .then(response=>{
+            console.log(response.data)
+          this.setState({hitList:response.data})       
+        })    
+        this.setState({newTarget:''}) 
+    }
+    
+        
 
 
     render(){
@@ -75,8 +86,11 @@ export default class HitList extends Component{
                     </div> 
                     <div><h2>Who else?</h2>
                     <button onClick={this.newTargetAdd}>Get 'em</button>
-                    <input onChange={(e)=>this.handleNewTarget(e.target.value)}></input>
+                    <input 
+                    value={this.state.newTarget}
+                    onChange={(e)=>this.handleNewTarget(e.target.value)}></input>
                     </div>
+                    
                     <div className="deadList">
                     <h2>Terminated</h2>
                         <ListDisplay 
